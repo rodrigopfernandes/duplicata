@@ -15,7 +15,6 @@
         <div>Data do Vencimento:&nbsp;<span id="dataDoVencimento">&nbsp;</span></div>
         <div>Nome do Vendedor:&nbsp;<span id="nomeDoVendedor">&nbsp;</span></div>
         <div>Domicílio do Vendedor:&nbsp;<span id="domicilioDoVendedor">&nbsp;</span></div>
-        <div>Nome do Comprador:&nbsp;<span id="nomeDoComprador">&nbsp;</span></div>
         <div>Domicílio do Comprador:&nbsp;<span id="domicilioDoComprador">&nbsp;</span></div>
         <div>Nome do Endossatário:&nbsp;<span id="endossado">&nbsp;</span></div>
         <div>Valor da Duplicata:&nbsp;<span id="valorDuplicata">&nbsp;</span></div>
@@ -104,16 +103,7 @@
         console.error(err);
         cidadadeVendedor.innerHTML = err;
         });
-        
-        contrato.nomeComprador()
-        .then( (nomeDoComprador) => {
-        comprador.innerHTML = nomeDoComprador;
-        })
-        .catch( (err) => {
-        console.error(err);
-        comprador.innerHTML = err;
-        });    
-                
+                              
         contrato.domicilioComprador()
         .then( (domicilioDoComprador) => {
         cidadeComprador.innerHTML = domicilioDoComprador;
