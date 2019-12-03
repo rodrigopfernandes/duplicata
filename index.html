@@ -75,6 +75,15 @@
         var clausula = document.getElementById("clausulaOrdem");
         var aceiteDocumento = document.getElementById("aceiteDuplicata");
 
+        contrato.dataEmissao()
+        .then( (dataDeEmissao) => {
+            emissao.innerHTML = dataDeEmissao;
+        })
+        .catch( (err) => {
+            console.error(err);
+            emissao.innerHTML = err;
+        });
+            
         contrato.numeroOrdem()
         .then( (numeroOrdem) => {
             ordem.innerHTML = numeroOrdem;
@@ -85,8 +94,8 @@
         });
 
         contrato.dataVencimento()
-        .then( (dataVencimento) => {
-            vencimento.innerHTML = dataVencimento;
+        .then( (dataDeVencimento) => {
+            vencimento.innerHTML = dataDeVencimento;
         })
         .catch( (err) => {
             console.error(err);
