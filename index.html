@@ -67,7 +67,7 @@
         var emissao = document.getElementById("dataDaEmissao");
         var ordem = document.getElementById("numeroDeOrdem");
         var fatura = document.getElementById("numeroDaFatura");
-        var vencimento = document.getElementById("dataDeVencimento");
+        var vencimento = document.getElementById("dataDoVencimento");
         var cidadadeVendedor = document.getElementById("domicilioDoVendedor");
         var cidadeComprador = document.getElementById("domicilioDoComprador");
         var preco = document.getElementById("valorDuplicata");
@@ -77,30 +77,94 @@
 
         contrato.dataEmissao()
         .then( (dataDeEmissao) => {
-            emissao.innerHTML = dataDeEmissao;
+        emissao.innerHTML = dataDeEmissao;
         })
         .catch( (err) => {
-            console.error(err);
-            emissao.innerHTML = err;
+        console.error(err);
+        emissao.innerHTML = err;
         });
             
         contrato.numeroOrdem()
         .then( (numeroOrdem) => {
-            ordem.innerHTML = numeroOrdem;
+        ordem.innerHTML = numeroOrdem;
         })
         .catch( (err) => {
-            console.error(err);
-            ordem.innerHTML = err;
+        console.error(err);
+        ordem.innerHTML = err;
         });
-
-        contrato.dataVencimento()
-        .then( (dataDeVencimento) => {
-            vencimento.innerHTML = dataDeVencimento;
+            
+        contrato.numeroFatura()
+        .then( (numeroDaFatura) => {
+        fatura.innerHTML = numeroDaFatura;
         })
         .catch( (err) => {
-            console.error(err);
-            vencimento.innerHTML = err;
+        console.error(err);
+        fatura.innerHTML = err;
         });    
+            
+        contrato.dataVencimento()
+        .then( (dataDoVencimento) => {
+        vencimento.innerHTML = dataDoVencimento;
+        })
+        .catch( (err) => {
+        console.error(err);
+        vencimento.innerHTML = err;
+        });
+            
+        contrato.domicilioVendedor()
+        .then( (domicilioDoVendedor) => {
+        cidadadeVendedor.innerHTML = domicilioDoVendedor;
+        })
+        .catch( (err) => {
+        console.error(err);
+        cidadadeVendedor.innerHTML = err;
+        });
+            
+        contrato.domicilioComprador()
+        .then( (domicilioDoComprador) => {
+        cidadeComprador.innerHTML = domicilioDoComprador;
+        })
+        .catch( (err) => {
+        console.error(err);
+        cidadeComprador.innerHTML = err;
+        });    
+        
+        contrato.valor()
+        .then( (valorDuplicata) => {
+        preco.innerHTML = valorDuplicata;
+        })
+        .catch( (err) => {
+        console.error(err);
+        preco.innerHTML = err;
+        });     
+        
+        contrato.praca()
+        .then( (pracaPagamento) => {
+        cidadePagamento.innerHTML = pracaPagamento;
+        })
+        .catch( (err) => {
+        console.error(err);
+        cidadePagamento.innerHTML = err;
+        });    
+        
+        contrato.aOrdem()
+        .then( (clausulaOrdem) => {
+        clausula.innerHTML = clausulaOrdem;
+        })
+        .catch( (err) => {
+        console.error(err);
+        clausula.innerHTML = err;
+        });    
+        
+        contrato.aceite()
+        .then( (aceiteDuplicata) => {
+        aceiteDocumento.innerHTML = aceiteDuplicata;
+        })
+        .catch( (err) => {
+        console.error(err);
+        aceiteDocumento.innerHTML = err;
+        });    
+            
         </script>
     </body>
 </html>
