@@ -13,13 +13,17 @@
         <div>Número de Ordem:&nbsp;<span id="numeroDeOrdem">&nbsp;</span></div>
         <div>Número da Fatura:&nbsp;<span id="numeroDaFatura">&nbsp;</span></div>
         <div>Data do Vencimento:&nbsp;<span id="dataDoVencimento">&nbsp;</span></div>
+        <div>Nome do Vendedor:&nbsp;<span id="nomeDoVendedor">&nbsp;</span></div>
         <div>Domicílio do Vendedor:&nbsp;<span id="domicilioDoVendedor">&nbsp;</span></div>
+        <div>Nome do Comprador:&nbsp;<span id="nomeDoComprador">&nbsp;</span></div>
         <div>Domicílio do Comprador:&nbsp;<span id="domicilioDoComprador">&nbsp;</span></div>
+        <div>Nome do Endossatário:&nbsp;<span id="endossado">&nbsp;</span></div>
         <div>Valor da Duplicata:&nbsp;<span id="valorDuplicata">&nbsp;</span></div>
         <div>Praça do Pagamento:&nbsp;<span id="pracaPagamento">&nbsp;</span></div>
         <div>À ordem:&nbsp;<span id="clausulaOrdem">&nbsp;</span></div>
         <div>Aceite:&nbsp;<span id="aceiteDuplicata">&nbsp;</span></div>
-
+        <div>Pago:&nbsp;<span id="pago">&nbsp;</span></div>
+    
         <div>
             &nbsp;
         </div>
@@ -68,10 +72,14 @@
         var ordem = document.getElementById("numeroDeOrdem");
         var fatura = document.getElementById("numeroDaFatura");
         var vencimento = document.getElementById("dataDoVencimento");
+        var nomeVendedor = document.getElementById("nomeDoVendedor");
         var cidadadeVendedor = document.getElementById("domicilioDoVendedor");
+        var comprador = document.getElementById("nomeDoComprador");
+        var endossatario = document.getElementById("endossado");
         var cidadeComprador = document.getElementById("domicilioDoComprador");
         var preco = document.getElementById("valorDuplicata");
         var cidadePagamento = document.getElementById("pracaPagamento");
+        var consultaPagamento = document.getElementById("pago");
         var clausula = document.getElementById("clausulaOrdem");
         var aceiteDocumento = document.getElementById("aceiteDuplicata");
 
@@ -110,6 +118,15 @@
         console.error(err);
         vencimento.innerHTML = err;
         });
+
+        contrato.nomeVendedor()
+        .then( (nomeDoVendedor) => {
+        nomeVendedor.innerHTML = nomeDoVendedor;
+        })
+        .catch( (err) => {
+        console.error(err);
+        nomeVendedor.innerHTML = err;
+        });
             
         contrato.domicilioVendedor()
         .then( (domicilioDoVendedor) => {
@@ -119,7 +136,16 @@
         console.error(err);
         cidadadeVendedor.innerHTML = err;
         });
-            
+        
+        contrato.nomeComprador()
+        .then( (nomeDoComprador) => {
+        comprador.innerHTML = nomeDoComprador;
+        })
+        .catch( (err) => {
+        console.error(err);
+        comprador.innerHTML = err;
+        });    
+                
         contrato.domicilioComprador()
         .then( (domicilioDoComprador) => {
         cidadeComprador.innerHTML = domicilioDoComprador;
@@ -163,7 +189,27 @@
         .catch( (err) => {
         console.error(err);
         aceiteDocumento.innerHTML = err;
-        });    
+        });
+
+        contrato.pagamento()
+        .then( (quitado) => {
+        consultaPagamento.innerHTML = quitado;
+        })
+        .catch( (err) => {
+        console.error(err);
+        consultaPagamento.innerHTML = err;
+        });
+           
+        contrato.nomeEndossatario()
+        .then( (nomeDoEndossatario) => {
+        endossatario.innerHTML = nomeDoEndossatario;
+        })
+        .catch( (err) => {
+        console.error(err);
+        endossatario.innerHTML = err;
+        });
+    
+        bool public ;
             
         </script>
     </body>
