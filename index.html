@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Duplicata</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href="css.estilo.css">
+    </head>
+    <body>
+        <h1>DUPLICATA</h1>
+        <div>Data de Emissão:<span id="dataEmissao">&nbsp;</span></div>
+        <div>Número de Ordem:<span id="numeroOrdem">&nbsp;</span></div>
+        <div>Número da Fatura:<span id="numeroFatura">&nbsp;</span></div>
+        <div>Data do Vencimento:<span id="dataVencimento">&nbsp;</span></div>
+        <div>Domicílio do Vendedor:<span id="domicilioVendedor">&nbsp;</span></div>
+        <div>Domicílio do Comprador:<span id="domicilioComprador">&nbsp;</span></div>
+        <div>Valor da Duplicata<span id="valor">&nbsp;</span></div>
+        <div>Praça do Pagamento<span id="praca">&nbsp;</span></div>
+        <div>À ordem<span id="aOrdem">&nbsp;</span></div>
+        <div>Aceite:<span id="aceite">&nbsp;</span></div>
+
+        <div>
+            &nbsp;
+        </div>
+        
+        <form action="#" method="get" id="aceite" name="aceite" onsubmit="darAceite(); return false;">
+        <button type="submit">Dar aceite</button>
+        </form>
+
+        <div>
+            &nbsp;
+        </div>
+                
+        <form action="#" method="get" id="protestoAceite" name="protestoAceite" onsubmit="protestaAceite(); return false;">
+        <button type="submit">Protesto por falta de aceite</button>
+        </form>
+        
+        <div>
+            &nbsp;
+        </div>
+
+        <form action="#" method="get" id="endosso" name="endosso" onsubmit="endossar(); return false;">
+            <div>
+                <label for="nomeEndossatario">Informe o nome do Endossatário:</label>
+                <input type="text" name="nomeEndossatario" id="nomeEndossatario">
+            </div>
+            <div>
+                <label for="carteiraEndossatario">Informe o número da carteira do Endossatário:</label>
+                <input type="text" name="carteiraEndossatario" id="carteiraEndossatario" maxlength="40">
+            </div>
+        <button type="submit">Endossar duplicata</button>
+        </form>
+
+        <div>
+            &nbsp;
+        </div>
+
+        <form action="#" method="get" id="pagamento" name="pagamento" onsubmit="pagamento(); return false;">
+        <button type="submit">Quitar Título</button>
+        </form>
+
+        <script src="javascript/abi.js"></script> 
+        <script src="javascript/blockchain.js"></script>   
+    </body>
+</html>
