@@ -5,121 +5,34 @@ var signatario = provedor.getSigner();
 var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 
 function dadosDuplicata() {
-    var campoStatus = document.getElementById("dataDeEmissao");
-    var campoStatus = document.getElementById("numeroDeOrdem");
-    var campoStatus = document.getElementById("numeroDaFatura");
-    var campoStatus = document.getElementById("dataDeVencimento");
-    var campoStatus = document.getElementById("domicilioDoVendedor");
-    var campoStatus = document.getElementById("domicilioDoComprador");
-    var campoStatus = document.getElementById("valorDuplicata");
-    var campoStatus = document.getElementById("pracaPagamento");
-    var campoStatus = document.getElementById("clausulaOrdem");
-    var campoStatus = document.getElementById("aceiteDuplicata");
-    
-    /*numeroFatura;
-    ;
-    dataVencimento;
-    nomeVendedor;
-    domicilioVendedor;
-    carteiraCredor;
-    nomeComprador;
-    domicilioComprador;
-    carteiraDevedor;
-    nomeEndossatario;
-    carteiraEndossatario;
-    valor;
-    praca;*/
-
-
+    var emissao = document.getElementById("dataDeEmissao");
+    var ordem = document.getElementById("numeroDeOrdem");
+    var fatura = document.getElementById("numeroDaFatura");
+    var vencimento = document.getElementById("dataDeVencimento");
+    var cidadadeVendedor = document.getElementById("domicilioDoVendedor");
+    var cidadeComprador = document.getElementById("domicilioDoComprador");
+    var preco = document.getElementById("valorDuplicata");
+    var cidadePagamento = document.getElementById("pracaPagamento");
+    var clausula = document.getElementById("clausulaOrdem");
+    var aceiteDocumento = document.getElementById("aceiteDuplicata");
+        
     contrato.numeroOrdem()
     .then( (resultado) => {
-        numeroDeOrdem.innerHTML = resultado;
+        ordem.innerHTML = resultado;
     })
     .catch( (err) => {
         console.error(err);
-        numeroDeOrdem.innerHTML = err;
+        ordem.innerHTML = err;
     });
 
-    /*contrato.()
+    contrato.dataVencimento()
     .then( (resultado) => {
-        .innerHTML = resultado;
+        vencimento.innerHTML = resultado;
     })
     .catch( (err) => {
         console.error(err);
-        .innerHTML = err;
+        vencimento.innerHTML = err;
     });
-    
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-    
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });
-
-    contrato.()
-    .then( (resultado) => {
-        .innerHTML = resultado;
-    })
-    .catch( (err) => {
-        console.error(err);
-        .innerHTML = err;
-    });*/
 }
 
 
