@@ -17,8 +17,8 @@ function dadosDuplicata() {
     var aceiteDocumento = document.getElementById("aceiteDuplicata");
         
     contrato.numeroOrdem()
-    .then( (resultado) => {
-        ordem.innerHTML = resultado;
+    .then( (numeroOrdem) => {
+        ordem.innerHTML = numeroOrdem;
     })
     .catch( (err) => {
         console.error(err);
@@ -26,8 +26,8 @@ function dadosDuplicata() {
     });
 
     contrato.dataVencimento()
-    .then( (resultado) => {
-        vencimento.innerHTML = resultado;
+    .then( (dataVencimento) => {
+        vencimento.innerHTML = dataVencimento;
     })
     .catch( (err) => {
         console.error(err);
