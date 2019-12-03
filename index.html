@@ -40,7 +40,7 @@
         var ordem = document.getElementById("numeroDeOrdem");
         var fatura = document.getElementById("numeroDaFatura");
         var vencimento = document.getElementById("dataDoVencimento");
-        var nomeVendedor = document.getElementById("nomeDoVendedor");
+        var nomeDeVendedor = document.getElementById("nomeDoVendedor");
         var cidadadeVendedor = document.getElementById("domicilioDoVendedor");
         var comprador = document.getElementById("nomeDoComprador");
         var endossatario = document.getElementById("endossado");
@@ -89,7 +89,7 @@
 
         contrato.nomeVendedor()
         .then( (nomeDoVendedor) => {
-        nomeVendedor.innerHTML = nomeDoVendedor;
+        nomeDeVendedor.innerHTML = nomeDoVendedor;
         })
         .catch( (err) => {
         console.error(err);
