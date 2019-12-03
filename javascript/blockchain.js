@@ -5,6 +5,7 @@ var signatario = provedor.getSigner();
 var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 
 function dadosDuplicata() {
+    var status;
     var emissao = document.getElementById("dataDeEmissao");
     var ordem = document.getElementById("numeroDeOrdem");
     var fatura = document.getElementById("numeroDaFatura");
