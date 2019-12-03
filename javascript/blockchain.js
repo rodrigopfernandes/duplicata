@@ -5,16 +5,16 @@ var signatario = provedor.getSigner();
 var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 
 function dadosDuplicata() {
-    var campoStatus = document.getElementById("dataEmissao");
-    var campoStatus = document.getElementById("numeroOrdem");
-    var campoStatus = document.getElementById("numeroFatura");
-    var campoStatus = document.getElementById("dataVencimento");
-    var campoStatus = document.getElementById("domicilioVendedor");
-    var campoStatus = document.getElementById("domicilioComprador");
-    var campoStatus = document.getElementById("valor");
-    var campoStatus = document.getElementById("praca");
-    var campoStatus = document.getElementById("aOrdem");
-    var campoStatus = document.getElementById("aceite");
+    var campoStatus = document.getElementById("dataDeEmissao");
+    var campoStatus = document.getElementById("numeroDeOrdem");
+    var campoStatus = document.getElementById("numeroDaFatura");
+    var campoStatus = document.getElementById("dataDeVencimento");
+    var campoStatus = document.getElementById("domicilioDoVendedor");
+    var campoStatus = document.getElementById("domicilioDoComprador");
+    var campoStatus = document.getElementById("valorDuplicata");
+    var campoStatus = document.getElementById("pracaPagamento");
+    var campoStatus = document.getElementById("clausulaOrdem");
+    var campoStatus = document.getElementById("aceiteDuplicata");
     
     /*numeroFatura;
     ;
@@ -33,11 +33,11 @@ function dadosDuplicata() {
 
     contrato.numeroOrdem()
     .then( (resultado) => {
-        numeroOrdem.innerHTML = resultado;
+        numeroDeOrdem.innerHTML = resultado;
     })
     .catch( (err) => {
         console.error(err);
-        numeroOrdem.innerHTML = err;
+        numeroDeOrdem.innerHTML = err;
     });
 
     /*contrato.()
