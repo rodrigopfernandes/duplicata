@@ -4,21 +4,64 @@ ethereum.enable();
 var signatario = provedor.getSigner();
 var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 
-function darAceite() {
-        var status = true;
-        contrato.declaraAceite(status)
+function dadosDuplicata() {
+    var status;
+    var emissao = document.getElementById("dataDeEmissao");
+    var ordem = document.getElementById("numeroDeOrdem");
+    var fatura = document.getElementById("numeroDaFatura");
+    var vencimento = document.getElementById("dataDeVencimento");
+    var cidadadeVendedor = document.getElementById("domicilioDoVendedor");
+    var cidadeComprador = document.getElementById("domicilioDoComprador");
+    var preco = document.getElementById("valorDuplicata");
+    var cidadePagamento = document.getElementById("pracaPagamento");
+    var clausula = document.getElementById("clausulaOrdem");
+    var aceiteDocumento = document.getElementById("aceiteDuplicata");
+        
+    contrato.numeroOrdem()
+    .then( (numeroOrdem) => {
+        ordem.innerHTML = numeroOrdem;
+    })
+    .catch( (err) => {
+        console.error(err);
+        ordem.innerHTML = err;
+    });
+
+    contrato.dataVencimento()
+    .then( (dataVencimento) => {
+        vencimento.innerHTML = dataVencimento;
+    })
+    .catch( (err) => {
+        console.error(err);
+        vencimento.innerHTML = err;
+    });
+}
+
+
+/*function registrarMudancaStatus() {
+    var textoCampo = document.frmStatus.txtStatusPagamentoAluguel.value;
+    var caixaStatusTx = document.getElementById("caixaStatusTx");
+    if (textoCampo.length === 8) {
+        caixaStatusTx.innerHTML = "Enviando transação...";
+        contrato.mudaStatusPagamento(textoCampo)
         .then( (transacao) => {
-            console.log("Registrando Aceite ", transacao);   
-            status.wait()
+            console.log("registrarMudancaStatus - Transacao ", transacao);   
+            caixaStatusTx.innerHTML = "Transação enviada. Aguardando processamento...";
+            transacao.wait()
+            .then( (resultado) => {
+                buscaStatusContrato();
+                caixaStatusTx.innerHTML = "Transação realizada.";
+            })        
             .catch( (err) => {
-                console.error("Aguardando aceite ser minerada");
+                console.error("registrarMudancaStatus - Aguardando tx ser minerada");
                 console.error(err);
+                caixaStatusTx.innerHTML = "Algo saiu errado: " + err.message;
             })
         })
         .catch( (err) => {
-            console.error("registrarAceite");
+            console.error("registrarMudancaStatus");
             console.error(err);
+            caixaStatusTx.innerHTML = "Algo saiu errado: " + err.message;
         })
     }
-}
+} */
 
