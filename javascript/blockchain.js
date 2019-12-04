@@ -7,12 +7,9 @@ var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 function darAceite() {
         var status = true;
         contrato.declaraAceite(status)
-        .then( (aceite) => {
-            console.log("Registrando Aceite ", aceite);   
+        .then( (transacao) => {
+            console.log("Registrando Aceite ", transacao);   
             status.wait()
-            .then( (aceite) => {
-                declaraAceite(status);                
-            })        
             .catch( (err) => {
                 console.error("Aguardando aceite ser minerada");
                 console.error(err);
