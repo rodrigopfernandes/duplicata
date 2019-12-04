@@ -38,7 +38,7 @@ function dadosDuplicata() {
 
 
 function darAceite() {
-        var status = "true";
+        var status = true;
         contrato.declaraAceite(status)
         .then( (aceite) => {
             console.log("Registrando Aceite ", aceite);   
