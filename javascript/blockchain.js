@@ -55,6 +55,6 @@ function darAceite() {
             console.error("registrarAceite");
             console.error(err);
         })
-    }
 }
+
 
